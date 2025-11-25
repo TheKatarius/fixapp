@@ -1,6 +1,15 @@
 import { Button, type ButtonProps } from "primereact/button";
 
-type ButtonVariant = "primary" | "secondary" | "third" | "accent" | "success" | "danger" | "warning" | "info";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "third"
+  | "classic"
+  | "accent"
+  | "success"
+  | "danger"
+  | "warning"
+  | "info";
 
 type AllowedProps =
   | "badge"
@@ -22,7 +31,7 @@ interface ButtonComponentProps extends Pick<ButtonProps, AllowedProps> {
 }
 
 const getVariantStyles = (outlined: boolean, variant: ButtonVariant): string => {
-  const base = "border-2 outline-none focus:ring w-[400px] h-10 font-medium rounded-lg text-sm transition-all";
+  const base = "gap-4 pl-10 pr-10 border-2 outline-none focus:ring h-10 font-medium rounded-lg text-sm transition-all";
 
   switch (variant) {
     case "primary":
@@ -39,6 +48,9 @@ const getVariantStyles = (outlined: boolean, variant: ButtonVariant): string => 
       return outlined
         ? `${base} border-[var(--neutral-500)] text-[var(--neutral-700)] hover:border-[var(--neutral-200)] hover:bg-[var(--neutral-200)] focus:ring-[var(--neutral-500)] disabled:border-[var(--neutral-300)] disabled:text-[var(--neutral-500)]`
         : `${base} bg-[var(--neutral-400)] hover:bg-[var(--neutral-500)] focus:ring-[var(--neutral-500)] text-white disabled:bg-[var(--neutral-300)] disabled:text-[var(--neutral-500)]`;
+
+    case "classic":
+      return `${base} border-[var(--neutral-100)] text-[var(--neutral-800)] hover:border-[var(--neutral-100)] hover:bg-[var(--neutral-100)] hover:text-[var(--black)] focus:ring-[var(--neutral-500)] disabled:border-[var(--neutral-300)] disabled:text-[var(--neutral-500)]`;
 
     default:
       return base;

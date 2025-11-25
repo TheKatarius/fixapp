@@ -62,3 +62,8 @@
   --neutral-800: hsl(270, 0%, 30%);
   --neutral-900: hsl(270, 0%, 20%);
 }
+
+* {
+  font-family:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
