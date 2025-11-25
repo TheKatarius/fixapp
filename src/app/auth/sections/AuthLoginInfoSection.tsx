@@ -1,4 +1,4 @@
-import { FeatureCard, OpinionCard, StepCard, TabButton, TextComponent } from "@shared/components";
+import { FeatureCard, StepCard, TabButton, TestimonialSlider, TextComponent } from "@shared/components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -37,11 +37,11 @@ const FEATURES: InfoSection[] = [
   {
     icon: "pi-eye",
     title: "Twoja prywatność to podstawa",
-    description: "Chronimy Twoje dane. Kontakt do fachowca otrzymasz dopiero po akceptacji zlecenia.",
+    description: "Chronimy Twoje dane. Kontakt do wykonawcy otrzymasz dopiero po akceptacji zlecenia.",
   },
   {
     icon: "pi-map-marker",
-    title: "Fachowcy z Twojej okolicy",
+    title: "Wykonawcy z Twojej okolicy",
     description: "Usługi dostępne wyłącznie na terenie Krakowa – szybki dojazd i znajomość lokalnych realiów.",
   },
 ];
@@ -49,7 +49,7 @@ const FEATURES: InfoSection[] = [
 const STEPS: InfoSection[] = [
   {
     icon: "pi-users",
-    title: "Wybierz rolę: Klient lub Fachowiec",
+    title: "Wybierz rolę: Klient lub Wykonawca",
     description: "Dostosowujemy interfejs do Twoich potrzeb",
   },
   {
@@ -97,7 +97,7 @@ export const AuthLoginInfoSection = () => {
           weight="extrabold"
           className="mb-4 text-3xl leading-tight tracking-tight md:text-4xl"
         >
-          Zaufany fachowiec w obrębie Krakowa – zamów w kilka minut
+          Zaufany wykonawca w obrębie Krakowa – zamów w kilka minut
         </TextComponent>
         <TextComponent element="h5" color="white" weight="normal" className="text-lg opacity-90">
           Oszczędź czas i nerwy. Dajemy Ci dostęp do bazy zweryfikowanych ekspertów, którzy naprawią usterkę, kiedy
@@ -175,17 +175,9 @@ export const AuthLoginInfoSection = () => {
         </AnimatePresence>
       </div>
 
-      {OPINIONS.map((opinion, index) => (
-        <div className="mb-6 w-full">
-          <OpinionCard
-            key={index}
-            logo={opinion.logo ?? "https://placehold.co/40x40/ef4444/ffffff?text=?"}
-            rate={opinion.rate}
-            description={opinion.description}
-            name={opinion.name}
-          />
-        </div>
-      ))}
+      <div className="relative z-10 mt-8 w-full border-t border-white/10 pt-6">
+        <TestimonialSlider opinions={OPINIONS} />
+      </div>
     </div>
   );
 };

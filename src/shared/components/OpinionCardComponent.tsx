@@ -1,4 +1,4 @@
-interface OpinionCardProps {
+export interface OpinionCardProps {
   rate: number;
   description: string;
   name: string;
