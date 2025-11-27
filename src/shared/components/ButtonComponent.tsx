@@ -31,7 +31,7 @@ interface ButtonComponentProps extends Pick<ButtonProps, AllowedProps> {
 }
 
 const getVariantStyles = (outlined: boolean, variant: ButtonVariant): string => {
-  const base = "gap-4 pl-10 pr-10 border-2 outline-none focus:ring h-10 font-medium rounded-lg text-sm transition-all";
+  const base = "gap-4 px-10 border-2 outline-none focus:ring h-10 font-medium rounded-lg text-sm transition-all";
 
   switch (variant) {
     case "primary":
